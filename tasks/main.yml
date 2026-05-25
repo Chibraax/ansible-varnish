@@ -1,3 +1,23 @@
-#SPDX-License-Identifier: MIT-0
 ---
-# tasks file for ansible-varnish
+- name: Install varnish
+  ansible.builtin.package:
+    name: varnish
+    state: present
+  tags: varnish
+
+- name: Deploy varnish config
+  ansible.builtin.copy:
+    src: templates/default.vcl.j2
+    dest: /etc/varnish/default.vcl
+    owner: root
+    group: root
+    mode: '0644'
+  notify: restart varnish
+  tags: varnish
+
+- name: Enable and start varnish service
+  ansible.builtin.service:
+    name: varnish
+    state: started
+    enabled: true
+  tags: varnish
