@@ -23,7 +23,7 @@ LimitCORE=infinity
 ExecStart=/usr/sbin/varnishd \
           -F \
           -a :{{ varnish_port }} \
-          -T localhost:{{ varnish_admin_listen }} \
+          -T localhost:6082 \
           -f /etc/varnish/default.vcl \
           -S /etc/varnish/secret \
           -p feature=+http2 \
