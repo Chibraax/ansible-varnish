@@ -1,4 +1,9 @@
 ---
 backend_host: "127.0.0.1"
-backend_port: 8888
+backend_port: 8080
 varnish_port: 6081
+varnish_admin_listen: "127.0.0.1:6082"
+varnish_storage: "malloc,256m"
+varnish_user: varnish
+varnish_group: varnish
+varnish_vcl_conf: /etc/varnish/default.vcl
