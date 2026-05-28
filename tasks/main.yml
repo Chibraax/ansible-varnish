@@ -6,8 +6,8 @@
   tags: varnish
 
 - name: Deploy varnish config
-  ansible.builtin.copy:
-    src: templates/default.vcl.j2
+  ansible.builtin.template:
+    src: default.vcl.j2
     dest: /etc/varnish/default.vcl
     owner: root
     group: root

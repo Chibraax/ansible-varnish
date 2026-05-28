@@ -1,3 +1,4 @@
-#SPDX-License-Identifier: MIT-0
 ---
+backend_host: "127.0.0.1"
 backend_port: 8888
+varnish_port: 6081
